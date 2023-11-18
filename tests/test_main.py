@@ -18,13 +18,13 @@ class TestBrackets:
         result = brackets_check_balanсed(input)
         assert result == expected
     
-    # @pytest.xfail
-    # @pytest.mark.parametrize(
-    #     'input,expected', [
-    #         (r'', '<ошибка>'),
-    #         (r'test', '<ошибка>'),
-    #     ]
-    # )
-    # def test_not_brackets(self, input, expected):
-    #     result = brackets_check_balanсed(input)
-    #     assert result == expected
+    @pytest.mark.xfail
+    @pytest.mark.parametrize(
+        'input,expected', [
+            ('', '<ошибка>'),
+            ('test', '<ошибка>')
+        ]
+    )
+    def test_not_brackets(self, input, expected):
+        result = brackets_check_balanсed(input)
+        assert result == expected
